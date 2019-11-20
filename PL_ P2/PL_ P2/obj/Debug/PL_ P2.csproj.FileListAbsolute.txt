@@ -1,0 +1,10 @@
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\bin\Debug\PL_ P2.exe.config
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\bin\Debug\PL_ P2.exe
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\bin\Debug\PL_ P2.pdb
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL_ P2.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL__P2.Form1.resources
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL__P2.Properties.Resources.resources
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL_ P2.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL_ P2.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL_ P2.exe
+\\Mac\Home\Desktop\ТЯП ПР2\PL_ P2\PL_ P2\obj\Debug\PL_ P2.pdb
