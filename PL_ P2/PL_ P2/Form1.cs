@@ -43,6 +43,12 @@ namespace PL__P2
             return f;
         }
 
+        private void SetListLength(int len) {
+            len = len - rehashList.Count + 1;
+            for (int i = 0; i < len; i++)
+                rehashList.Add("");
+        }
+
         private bool AddToReHash(string Word) {
             int i = 0;
             bool inserted = false;
@@ -50,7 +56,9 @@ namespace PL__P2
             do {
                 int a = (Hash(Word) + i) % 10000;
                 if(rehashList.Count < a || rehashList[a] == ""){
-                    rehashList.Insert(a, Word);
+                    if (rehashList.Count < a)
+                        SetListLength(a);
+                    rehashList[a] = Word;
                     inserted = true;
                 }
                 if(rehashList[a] == Word){
@@ -95,7 +103,7 @@ namespace PL__P2
             do
             {
                 i++;
-            } while ((i < basicMas.Length) || (basicMas[i] != Word));
+            } while ((i < basicMas.Length - 1) && (basicMas[i] != Word));
             if (basicMas[i] != Word)
                 i = -1;
             return i;
@@ -136,6 +144,7 @@ namespace PL__P2
                                         identificator += line[i];
                                     if (line[i] == ' ') {
                                         AddToBasicMas(identificator);
+                                        AddToReHash(identificator);
                                         CS = C_state.IEnd;
                                     }
                                     break;
@@ -167,11 +176,11 @@ namespace PL__P2
             }
         }
 
-        public void FindWord (string Word) {
-            textBox1.Text = "BM: " + FindInBasicMas(Word).ToString() + "; ReHash: " + FindInReHash(Word).ToString();
+        public void FindWord (string word) {
+            textBox1.Text += word + " = BM: " + FindInBasicMas(word).ToString() + "; ReHash: " + FindInReHash(word).ToString() + "\r\n";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             FindWord(textBox2.Text);
         }

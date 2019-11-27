@@ -52,7 +52,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Найти идентификатор";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // textBox1
             // 
