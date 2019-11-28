@@ -21,8 +21,8 @@ namespace PL__P2
         private void ReadIndificatorsFile_Click(object sender, EventArgs e)
         {
             AnalyzeIndifFile();
+            ShowTable();
         }
-
 
         private void ClearLists() {
             basicMas = null;
@@ -65,7 +65,7 @@ namespace PL__P2
                     isError = true;
                 }
                 i++;
-            } while (!inserted && !isError);
+            } while (!inserted && !isError && i <= 10000);
             return inserted;
         }
 
@@ -88,7 +88,7 @@ namespace PL__P2
                     isError = true;
                 }
                 i++;
-            } while (!found && !isError);
+            } while (!found && !isError && i <= 10000);
             return index;
         }
 
@@ -183,6 +183,33 @@ namespace PL__P2
         private void Button2_Click(object sender, EventArgs e)
         {
             FindWord(textBox2.Text);
+        }
+
+        private void ShowTable() {
+            int i = 0;
+            dataGridView1.RowCount = 1;
+            dataGridView2.RowCount = 1;
+            dataGridView1.ColumnCount = 2;
+            dataGridView2.ColumnCount = 2;
+            int addedLines = 0;
+            for (i = 0; i < basicMas.Length; i++) {
+                if(dataGridView1.RowCount <= addedLines + 1)
+                    dataGridView1.RowCount++;
+                dataGridView1[0, addedLines].Value = i.ToString();
+                dataGridView1[1, addedLines].Value = basicMas[i];
+                addedLines++;
+            }
+            addedLines = 0;
+            for (i = 0; i < rehashList.Count; i++)
+            {
+                if(rehashList[i] != "") {
+                    if (dataGridView2.RowCount <= addedLines + 1)
+                        dataGridView2.RowCount++;
+                    dataGridView2[0, addedLines].Value = i.ToString();
+                    dataGridView2[1, addedLines].Value = rehashList[i];
+                    addedLines++;
+                }
+            }
         }
     }
 }
